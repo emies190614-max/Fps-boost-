@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q RobloxFPSBooster.zip
+      - run: |
+          echo "android.useAndroidX=true" > RobloxFPSBooster/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx3g" >> RobloxFPSBooster/gradle.properties
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
